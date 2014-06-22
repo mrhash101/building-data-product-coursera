@@ -1,0 +1,47 @@
+Linear Model on mtcars for an outcome of your choice 
+========================================================
+author: Hassan
+date: 21-06-2014
+
+Linear models can be confusing
+========================================================
+
+```{r}
+data(mtcars)
+library(caret)
+my_model<- train(mtcars$mpg~., data = mtcars, method = "lm")
+summary(my_model)
+```
+
+
+========================================================
+
+Notice that it can be difficult to decipher all the information in above summary. Graphs, may be?
+
+```{r, echo=FALSE}
+pred<- predict(my_model, mtcars)
+plot(mtcars$mpg, pred, col = 3, xlab = "Observed", ylab = "Predicted", main = "Predicted vs Observed") +abline(lm(pred~mtcars$mpg), col = 2)
+```
+
+
+What we need is a fancy app that does all of this on a single click
+========================================================
+The App uses
+
+- the mtcars dataset
+- caret package
+- AppliedPredictiveModeling
+- base Plot package
+
+
+
+Voila!
+========================================================
+
+The App allows the user to
+
+- choose an outcome from the list
+- look at the predicted vs observed graph
+- RMSE values for models
+ 
+With the App, you can see all these relationships on the go, using any variable as an outcome from the database. 
