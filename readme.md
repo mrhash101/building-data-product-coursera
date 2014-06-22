@@ -9,7 +9,7 @@ This is a document explaining how to run the R shiny app in this folder.
 
 Please run the following lines of code. R shiny app will be executed in the browser
 
-
+library(shiny)
 runGitHub('building-data-product-coursera', 'mrhash101')
 
 
